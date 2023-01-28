@@ -3,25 +3,26 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.create(question_params)
 
-    redirect_to @question
+    redirect_to @question, notice: 'Новый вопрос создан!'
   end
 
   def update
     @question.update(question_params)
 
-    redirect_to question_path(@question)
+    redirect_to question_path(@question), notice: 'Вопрос изменен!'
   end
 
   def destroy
     @question.destroy
 
-    redirect_to questions_path
+    redirect_to questions_path, notice: 'Вопрос удален!'
   end
 
   def show
   end
 
   def index
+    @question = Question.new
     @questions = Question.all
   end
 

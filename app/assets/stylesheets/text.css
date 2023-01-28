@@ -26,3 +26,7 @@ a, button {
 .hidden {
     opacity: 50%;
 }
+
+.text-gray {
+  color: #a0a0a0;
+}
