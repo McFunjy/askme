@@ -1,16 +1,32 @@
 body {
-    background: #03071e;
-    display: flex;
-    justify-content: center;
+  background: #03071e;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-    max-width: 800px;
-    margin: 40px;
-    width: 100%;
+  max-width: 800px;
+  margin: 40px;
+  width: 100%;
 }
 
+.container, .navbar {
+  padding: 20px;
+}
+  
 .container {
-    background: #fff;
-    padding: 20px;
+  background: #fff;
+}
+  
+.navbar {
+  align-items: center;
+  background-color: #370617;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.navbar a {
+  color: white;
+  text-decoration: none;
 }

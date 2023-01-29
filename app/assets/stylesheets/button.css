@@ -8,6 +8,11 @@
     text-decoration: none;
 }
 
-.button_main {
+.button-main {
     background-color: #9d0208;
+}
+
+.button-yellow {
+    background: #ffba08;
+    color: #000;
 }
