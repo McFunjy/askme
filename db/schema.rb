@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_24_201653) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_29_222204) do
   create_table "questions", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -18,6 +18,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_201653) do
     t.datetime "updated_at", null: false
     t.boolean "hidden", default: false, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "navbar_color", default: "#370617"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
 end
