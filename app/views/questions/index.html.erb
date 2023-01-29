@@ -16,7 +16,7 @@
 </div>
 
 <% @questions.each do |question| %>
-  <div class="mt-sm container">
+  <%= tag.div class: class_names("mt-sm", "container", { hidden: question.hidden? }) do %>
     <%= render question %>
-  </div>
+  <% end %>
 <% end %>
