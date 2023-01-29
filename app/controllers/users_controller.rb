@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
     session.delete(:user_id)
 
-    redirect_to root_path, notice: "Пользователь @#{@user.nickname} удален"
+    redirect_to root_path, notice: "Пользователь удален"
   end
 
   private
