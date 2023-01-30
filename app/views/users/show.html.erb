@@ -1,5 +1,12 @@
 <div class="user-box">
   <h2 class="title-lg mt-lg"><%= @user.name %></h2>
+
+  <% if current_user == @user %>
+    <p class="mt mb-lg">
+      <%= link_to fa_icon('pencil'), edit_user_path(@user), title: 'Редактировать профиль' %>
+    </p>
+  <% end %>
+
   <p class="text-bold mt mb-lg"><%= display_nickname(@user) %></p>
 </div>
 
