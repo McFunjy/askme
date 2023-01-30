@@ -38,3 +38,7 @@ a, button {
 .text-bold {
   font-weight: bold;
 }
+
+.text-ws {
+  white-space: pre-line;
+}
