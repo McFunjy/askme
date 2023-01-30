@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true, length: { maximum: 40 }, format: { with: /\A\w+\z/ }
   validates :navbar_color, format: { with: /\A#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/ }
 
+  has_many :questions, dependent: :delete_all
+
   private
     
   def downcase_nickname
