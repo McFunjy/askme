@@ -1,0 +1,10 @@
+<div class="container empty">
+  <p class="title-sm text-dark-red mb">
+    У этого пользователя пока никто ничего не спросил
+  </p>
+
+  <%= image_tag('empty.jpg') %>
+
+  <%= link_to "Задать вопрос", new_question_path(user_id: user),
+    class: 'button button-main mt' %>
+</div>

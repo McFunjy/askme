@@ -10,24 +10,28 @@
   <p class="text-bold mt mb-lg"><%= display_nickname(@user) %></p>
 </div>
 
-<div class="container">
-  <%= link_to "Спроси меня", new_question_path(user_id: @user.id),
-    class: 'button button-yellow' %>
-    
-  <p class="mt">
-    <%= render 'questions/form', question: @question %>
-  </p>
-</div>
+<% if @questions.any? %>
+  <div class="container">
+    <%= link_to "Спроси меня", new_question_path(user_id: @user.id),
+      class: 'button button-yellow' %>
+      
+    <p class="mt">
+      <%= render 'questions/form', question: @question %>
+    </p>
+  </div>
 
-<div class="container mt-sm">
-  <h2 class="title-lg">
-    <%= @questions.count %>
-    <%= inclination(@questions.count, 'вопрос', 'вопроса', 'вопросов') %>
-  </h2>
-</div>
+  <div class="container mt-sm">
+    <h2 class="title-lg">
+      <%= @questions.count %>
+      <%= inclination(@questions.count, 'вопрос', 'вопроса', 'вопросов') %>
+    </h2>
+  </div>
 
-<% @questions.each do |question| %>
-  <%= tag.div class: class_names("mt-sm", "container", { hidden: question.hidden? }) do %>
-    <%= render question %>
+  <% @questions.each do |question| %>
+    <%= tag.div class: class_names("mt-sm", "container", { hidden: question.hidden? }) do %>
+      <%= render question %>
+    <% end %>
   <% end %>
+<% else %>
+  <%= render partial: 'empty', locals: {user: @user} %>
 <% end %>
