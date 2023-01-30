@@ -9,6 +9,7 @@
  *= require button
  *= require form
  *= require message
+ *= require empty
  *
  *= require question
  *= require user

@@ -31,6 +31,10 @@ a, button {
   color: #a0a0a0;
 }
 
+.text-dark-gray {
+  color: #464646;
+}
+
 .text-red {
     color: #d00000;
   }
