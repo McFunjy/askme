@@ -11,8 +11,6 @@ class UsersController < ApplicationController
 
       render :new
     end
-
-    
   end
 
   def new
@@ -27,7 +25,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-
       redirect_to root_path, notice: 'Данные пользователя обновлены'
     else  
       flash.now[:alert] = 'При попытке сохранить пользователя возникли ошибки'
@@ -50,5 +47,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :navbar_color)
   end
-  
 end
