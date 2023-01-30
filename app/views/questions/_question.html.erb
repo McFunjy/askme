@@ -1,3 +1,12 @@
+<p class="text-sm text-dark-gray">
+  Автор:  
+  <% if question.author.present? %>
+    <%= link_to display_nickname(question.author), user_path(question.author) %>
+  <% else %>
+    Аноним
+  <% end %>
+</p>
+
 <div class="mb-sm text-ws">
   <%= question.body%>
 </div>
