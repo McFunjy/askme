@@ -12,6 +12,11 @@
   <p><%= form.label :body, 'Текст вопроса' %></p>
   <p><%= form.text_area :body, rows: 2, class: 'form-text-area' %></p>
 
+  <% if @question.persisted? %>
+    <p class="mt"><%= form.label :answer, 'Ответ' %></p>
+    <p><%= form.text_area :answer, rows: 2, class: 'form-text-area' %></p>
+  <% end %>
+
   <p class="mt">
     <%= form.submit 'Сохранить', class: 'button button-main' %> или <%= link_to 'вернуться', :back %>
   </p>
