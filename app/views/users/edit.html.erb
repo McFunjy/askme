@@ -8,6 +8,12 @@
       <% end %>
     </div>
   <% end %>
+
+  <div class="mt">
+    <p><%= image_tag @user.gravatar_url, title: "@#{@user.nickname}", class: 'rounded' %></p>
+    <p class="text-sm">Чтобы добавить или поменять аватар — зарегистрируйтесь на <%= link_to "Gravatar", 'https://gravatar.com' %> и загрузите фото</p>
+  </div>
+
   
   <div class="mt">
     <%= form_with model: @user, data: {turbo: false} do |form| %>
