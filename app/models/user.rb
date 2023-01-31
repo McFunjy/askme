@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
+  
   has_secure_password
 
   before_validation :downcase_nickname, :downcase_email
@@ -9,8 +12,9 @@ class User < ApplicationRecord
 
   has_many :questions, dependent: :delete_all
 
-  include Gravtastic
-  gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
+  def to_param
+    nickname  
+  end
 
   private
     
