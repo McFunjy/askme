@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_30_230905) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_115924) do
   create_table "questions", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_230905) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "nickname"
+    t.string "nickname", null: false
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
