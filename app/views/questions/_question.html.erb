@@ -29,7 +29,7 @@
       <%= button_to fa_icon('trash-o'), question_path(question), method: :delete, title: 'Удалить вопрос', 
         form: {data: {turbo_confirm: 'Точно удалить вопрос?'}}, class: 'mr-sm' %>
       <% unless question.hidden? %>
-        <%= button_to fa_icon('eye-slash'), "/questions/#{question.id}/hide", method: :put, title: 'Скрыть вопрос' %>
+        <%= button_to fa_icon('eye-slash'), hide_question_path(question), method: :put, title: 'Скрыть вопрос' %>
       <% end %>
     </div>
   <% end %>
