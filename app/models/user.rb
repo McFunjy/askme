@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/ }
   validates :nickname, uniqueness: true, length: { maximum: 40 }, format: { with: /\A\w+\z/ }
-  validates :navbar_color, format: { with: /\A#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/ }
+  validates :navbar_color, format: { with: /\A#[[:xdigit:]]{3}{1,2}\z/ }
 
   has_many :questions, dependent: :delete_all
 
